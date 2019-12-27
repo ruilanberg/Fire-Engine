@@ -2,11 +2,11 @@
 //
 
 #include "FireEngine.h"
-
+#include "ECS/Entity.h"
 using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+	Entity entt;
 	return 0;
 }

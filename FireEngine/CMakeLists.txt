@@ -3,7 +3,11 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-# Add source to this project's executable.
-add_executable (FireEngine "FireEngine.cpp" "FireEngine.h")
+add_subdirectory("ECS")
 
-# TODO: Add tests and install targets if needed.
+set(FIREENGINE_HEADER
+	${ECS_HEADER})
+
+# Add source to this project's executable.
+add_executable (FireEngineTest "FireEngine.cpp" "FireEngine.h" ${FIREENGINE_HEADER})
+
