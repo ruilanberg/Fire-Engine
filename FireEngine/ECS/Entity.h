@@ -4,7 +4,7 @@
 class Entity
 {
 public:
-	Entity() : m_id{ m_id = ++id } {}
+	Entity() : m_id{ m_id = id++ } {}
 
 	int ID() {
 		return m_id;

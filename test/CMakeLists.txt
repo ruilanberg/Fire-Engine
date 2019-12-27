@@ -30,7 +30,17 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
+# Add code test
+include("ECS/CMakeLists.txt")
+
+message(${ECS})
+
+set(FIREENGINETEST 
+    ${ECS}
+    main.cpp)
+
+
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(example example.cpp)
+add_executable(example  ${FIREENGINETEST})
 target_link_libraries(example gtest_main)
 add_test(NAME example_test COMMAND example)
