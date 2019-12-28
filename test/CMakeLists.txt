@@ -31,12 +31,12 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 # Add code test
-include("ECS/CMakeLists.txt")
-
-message(${ECS})
+include(${CMAKE_CURRENT_LIST_DIR}/ECS/CMakeLists.txt)
 
 set(FIREENGINETEST 
-    ${ECS}
+    ${FIREENGINE_HEADER}
+    ${FIREENGINE_SOURCE}
+    ${ECS_TEST}
     main.cpp)
 
 

@@ -1,2 +1,6 @@
 set(ECS_HEADER
-	Entity.h)
+	${CMAKE_CURRENT_LIST_DIR}/Entity.h
+	${CMAKE_CURRENT_LIST_DIR}/EntityManager.h)
+
+set(ECS_SOURCE
+	 ${CMAKE_CURRENT_LIST_DIR}/EntityManager.cpp)

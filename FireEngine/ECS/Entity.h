@@ -1,21 +1,28 @@
 #ifndef _ENTITY_H
 #define _ENTITY_H
 
+#include <stdint.h>
+
+#include <memory>
+#include <algorithm>
+
 class Entity
 {
 public:
-	Entity() : m_id{ m_id = id++ } {}
 
-	int ID() {
+	friend class EntityManager;
+
+	Entity() = default;
+	~Entity() = default;
+
+	inline uint32_t ID() {
 		return m_id;
 	}
 
 private :
-	int m_id = 0;
-
-	static int id;
+	Entity(uint32_t id) : m_id{ id } {};
+	uint32_t m_id = 0;
 };
 
-int Entity::id = 0;
 
 #endif // !_ENTITY_H
